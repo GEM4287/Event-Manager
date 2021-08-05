@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Internal CSS -->
+    <link href="../stylesheet/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font Awesomw -->
+    <script src="https://kit.fontawesome.com/ff6ae855f8.js" crossorigin="anonymous"></script>
+
+    <!--== Google Fonts ==-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <title>Home page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: wheat;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" ><span class="logo">EVENT MANAGER</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href=""><%=users%></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/loginadmin">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">about</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contactus">contact us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signout">Sign Out</a>
+            </li>
+        </ul> 
+      </div>  
+    </nav>
+<!------------------------------------------------------------------------------------------------------------->
+
+<section style="min-height: 464px;">
+
+    <div class="row" style="margin: 20px;">
+        <div class="col-md-6 mb-3 card">
+            <h5 class="card-header myclass1">Venues Section</h5>
+            <div class="card-body">
+                <h5 class="card-title">If you wanna register your venue with us, you can do by clicking on add button, view shows all the venues and you can update or delete your events.</h5>
+                <p class="card-text">Please select one of the following.</p>
+                <a href="/addvenue" class="btn btn-primary">Add Venue</a>
+                <a href="/viewvenue" class="btn btn-primary">View Venue</a>
+                <a href="/updatevenue" class="btn btn-primary">Update/Delete</a>
+            </div>
+        </div>
+        <!-- <div class="col-md-4 mb-3 card">
+            <h5 class="card-header myclass1">For Medicine</h5>
+            <div class="card-body">
+                <h5 class="card-title">This section Add a new Medicine or Update an older one.</h5>
+                <p class="card-text">Please select one of the following.</p>
+                <a href="/addmed" class="btn btn-primary">Add Med</a>
+                <a href="/viewmed" class="btn btn-primary">View Med</a>
+                <a href="/updatemed" class="btn btn-primary">Update Med</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3 card">
+            <h5 class="card-header myclass1">For Symptoms</h5>
+            <div class="card-body">
+                <h5 class="card-title">This section Add a new Symptom or Update an older one.</h5>
+                <p class="card-text">Please select one of the following.</p>
+                <a href="/addsympt" class="btn btn-primary">Add Sympt</a>
+                <a href="/viewsympt" class="btn btn-primary">View Sympt</a>
+                <a href="/updatesympt" class="btn btn-primary">Update Sympt</a>
+            </div>
+        </div> -->
+        <div class="col-md-6 mb-3 card">
+            <h5 class="card-header myclass1">Accepting event creation</h5>
+            <div class="card-body">
+                <h5 class="card-title">Shows the list of all the events that is being created by the users and which is not paid by him.</h5>
+                <p class="card-text">Click this buttom to see the numbers of events that is being created and if click on add to accept that event.</p>
+                <a href="/viewunpaidadmin" class="btn btn-primary">View all unpaid request.</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!------------------------------------------------------------------------------------------------------------>
+  
+<%- include ('../footer') %>
+
+<style>
+    .myclass1 {
+        font-size: x-large;
+        font-weight: bolder;
+        background-color: rgb(253, 238, 211);
+    }
+</style>

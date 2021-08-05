@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Internal CSS -->
+    <link href="../stylesheet/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font Awesomw -->
+    <script src="https://kit.fontawesome.com/ff6ae855f8.js" crossorigin="anonymous"></script>
+
+    <!--== Google Fonts ==-->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <title>Home page</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg" style="background-color: wheat;">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="#" ><span class="logo">EVENT MANAGER</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">about</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="document.getElementById('modal-wrapper').style.display='block'">login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contactus">contact us</a>
+            </li>
+          </ul> 
+        </div>
+      </div>  
+    </nav>
+    
+<!-----------------------------------Content Carousel-------------------------------------------------------->
+    <% if (message.length > 0) { %>
+      <div class="alert alert-success col-sm-12" style="display: block;text-align: center;"><%= message %></div>
+    <% } %>
+    <section>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../images/bg-slide-02.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-content" style="margin-left: 400px; margin-bottom:180px;">
+              <div class="header-cta">
+                <div class="container">
+                  <div class="row">
+                    <div class="entry-content">
+                        <p><span class="start-text"><b>From THE MARCH 7, 2014</b></span></p>
+                        <h4 class="entry-title"><a href="#">Organizing World class events</a></h4>
+                        <h5><span><b>Schrodinger confirms that Germany international ...</b></span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../images/bg-slide-01.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-content" style="margin-left: 400px; margin-bottom:180px;">
+              <div class="header-cta">
+                <div class="container">
+                  <div class="row">
+                    <div class="entry-content">
+                        <p><span class="start-text"><b>From THE MARCH 7, 2014</b></span></p>
+                        <h4 class="entry-title"><a href="#">Organizing World class events</a></h4>
+                        <h5><span><b>Schrodinger confirms that Germany international ...</b></span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+  <!--------------------------------------------------------------------------------------------------------->
+
+    <section style="background-color: rgb(250, 243, 232); display: block;">
+      <div style="background-color: rgb(250, 243, 232); display: block;">
+        <br>
+        <div class="text-center p-3">
+          <h2 style="font-weight: bolder; font-size: 45px;text-decoration: underline 3px ;">Event Scheduler</h2>
+          <h4 style="padding: 10px 20px;">Check out the event details here.</h4>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row mt-4">
+            <% if(cardvalue[0]!=undefined) {%>
+              <div class="col-md-6">
+                <div class="card">
+                  <form method="POST" action="/bookmytickets">
+                    <div class="card-body" style="margin: 0px; padding: 0px; margin-top: 10px;">
+                      
+                      <div class="row" style="background-color: wheat;margin: 0px;padding: 0px;height: 60px;">
+                        <h3 style="font-weight: bolder; text-align: center;margin-top: 15px;"><%= cardvalue[0].eventname %></h3>
+                      </div>
+                      <hr>
+
+                      <div class="row">
+                        <div class="col-md-4">
+                          <p style="margin-left: 20px; font-size: 13px;"><%= cardvalue[0].eventdescription %></p>
+                        </div>
+                        <div class="col-md-8 mystle" style="padding-right: 30px;">
+                          <input type="text" name="idevent" value="<%= cardvalue[0].idevent %>" hidden>
+                          <p style="font-size: 13px; margin-top: -10px;">Venue: <%= cardvalue[0].eventvenue %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Passes: <%= cardvalue[0].eventpeopleleft %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Price: <%= cardvalue[0].eventprice %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Date: <%= cardvalue[0].eventdate %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Type of Function: <%= cardvalue[0].eventtype %></p>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><button type="submit" style="border: 0px solid;text-decoration: underline; color: blue;">Click here to book your ticket</button></small>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            <% } %>
+            <% if(cardvalue[1]!=undefined) {%>
+              <div class="col-md-6">
+                <div class="card">
+                  <form method="POST" action="/bookmytickets">
+                    <div class="card-body" style="margin: 0px; padding: 0px; margin-top: 10px;">
+                      
+                      <div class="row" style="background-color: wheat;margin: 0px;padding: 0px;height: 60px;">
+                        <h3 style="font-weight: bolder; text-align: center;margin-top: 15px;"><%= cardvalue[1].eventname %></h3>
+                      </div>
+                      <hr>
+
+                      <div class="row">
+                        <div class="col-md-4">
+                          <p style="margin-left: 20px; font-size: 13px;"><%= cardvalue[1].eventdescription %></p>
+                        </div>
+                        <div class="col-md-8 mystle" style="padding-right: 30px;">
+                          <input type="text" name="idevent" value="<%= cardvalue[1].idevent %>" hidden>
+                          <p style="font-size: 13px; margin-top: -10px;">Venue: <%= cardvalue[1].eventvenue %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Passes: <%= cardvalue[1].eventpeopleleft %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Price: <%= cardvalue[1].eventprice %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Date: <%= cardvalue[1].eventdate %></p>
+                          <hr style="margin-top: -15px;">
+                          <p style="font-size: 13px; margin-top: -10px;">Type of Function: <%= cardvalue[1].eventtype %></p>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted"><button type="submit" style="border: 0px solid;text-decoration: underline; color: blue;">Click here to book your ticket</button></small>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          <% } %>
+          <div class="row mt-4">
+          <% if(cardvalue[2]!=undefined) {%>
+            <div class="col-md-6">
+              <div class="card">
+                <form method="POST" action="/bookmytickets">
+                  <div class="card-body" style="margin: 0px; padding: 0px; margin-top: 10px;">
+
+                    <div class="row" style="background-color: wheat;margin: 0px;padding: 0px;height: 60px;">
+                      <h3 style="font-weight: bolder; text-align: center;margin-top: 15px;"><%= cardvalue[2].eventname %></h3>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-md-4">
+                        <p style="margin-left: 20px; font-size: 13px;"><%= cardvalue[2].eventdescription %></p>
+                      </div>
+                      <div class="col-md-8 mystle" style="padding-right: 30px;">
+                        <input type="text" name="idevent" value="<%= cardvalue[2].idevent %>" hidden>
+                        <p style="font-size: 13px; margin-top: -10px;">Venue: <%= cardvalue[2].eventvenue %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Passes: <%= cardvalue[2].eventpeopleleft %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Price: <%= cardvalue[2].eventprice %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Date: <%= cardvalue[2].eventdate %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Type of Function: <%= cardvalue[2].eventtype %></p>
+                      </div>
+                    </div>
+                  
+                  
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"><button type="submit" style="border: 0px solid;text-decoration: underline; color: blue;">Click here to book your ticket</button></small>
+                  </div>
+                </form>
+              </div>
+            </div>
+          <% } %>
+          <% if(cardvalue[3]!=undefined) {%>
+            <div class="col-md-6">
+              <div class="card">
+                <form method="POST" action="/bookmytickets">
+                  <div class="card-body" style="margin: 0px; padding: 0px; margin-top: 10px;">
+
+                    <div class="row" style="background-color: wheat;margin: 0px;padding: 0px;height: 60px;">
+                      <h3 style="font-weight: bolder; text-align: center;margin-top: 15px;"><%= cardvalue[3].eventname %></h3>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-md-4">
+                        <p style="margin-left: 20px; font-size: 13px;"><%= cardvalue[3].eventdescription %></p>
+                      </div> 
+                      <div class="col-md-8 mystle" style="padding-right: 30px;">
+                        <input type="text" name="idevent" value="<%= cardvalue[3].idevent %>" hidden>
+                        <p style="font-size: 13px; margin-top: -10px;">Venue: <%= cardvalue[3].eventvenue %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Passes: <%= cardvalue[3].eventpeopleleft %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Price: <%= cardvalue[3].eventprice %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Date: <%= cardvalue[3].eventdate %></p>
+                        <hr style="margin-top: -15px;">
+                        <p style="font-size: 13px; margin-top: -10px;">Type of Function: <%= cardvalue[3].eventtype %></p>
+                      </div>
+                    </div>
+                  
+                  
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted"><button type="submit" style="border: 0px solid;text-decoration: underline; color: blue;">Click here to book your ticket</button></small>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>  
+      </div>
+      <br>
+    </section>
+    
+
+    <div class="jumbotron jumbotron-fluid" style="background-color: wheat; border-radius: 4px; overflow: hidden;">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); font-size: larger; font-weight: bold;">
+        © 2021 Copyright:
+        <a class="text-dark" href="/">Gaurav Mehta</a>
+      </div>
+    </div>
+    
+
+    <!-------------Login Section modal ----------------------------------------------------------------------->
+    
+    <div id="modal-wrapper" class="modal" >
+      <div class="w3-bar w3-black" style="display: flex;justify-content: center;max-width: 520px;margin-left: 405px;margin-top: 50px;">
+        <button class="w3-bar-item w3-button" style="height: 70px;font-size:larger;" onclick="openCity('London')">For ADMIN </button>
+        <button class="w3-bar-item w3-button" style="height: 70px;font-size: larger;" onclick="openCity('Paris')">LOGIN FOR USERS</button>
+      </div>
+      
+      <div id="London" class="w3-container city" style="margin-top: -50px;">
+          <form class="modal-content animate" action="/loginadmin" method="POST">
+              <div class="imgcontainer">
+                  <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <br><h1 style="text-align:center;font-weight: bolder;">For ADMIN Only</h1>
+              </div>
+              <div class="container">
+                  <input type="text" placeholder="Enter Username" name="iusername" style="width: 90%;padding: 12px 20px;margin: 8px 26px;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;font-size: 16px;">
+                  <label id = "label1" style="visibility: hidden;">Incorrect user ID</label>
+                  <input type="password" placeholder="Enter Password" name="ipassword" style="width: 90%;padding: 12px 20px;margin: 8px 26px;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;font-size: 16px;">      
+                  <label id = "label2" style="visibility: hidden;">Incorrect Password</label>
+                  <button type="submit" style="background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 26px;border: none;cursor: pointer;width: 90%;font-size:20px;">Login</button>
+              </div>
+          </form>
+      </div>
+      
+      <div id="Paris" class="w3-container city" style="display:none;margin-top: -50px;">
+          <form class="modal-content animate" action="/login" method="POST">
+              <div class="imgcontainer">
+                  <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+                  <br><h1 style="text-align:center;font-weight: bolder;margin-top: 20px;">Login to Create an Event</h1>
+              </div>
+              <div class="container">
+                  <input type="text" placeholder="Enter Username" name="iusername" style="width: 90%;padding: 12px 20px;margin: 8px 26px;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;font-size: 16px;">
+                  <label id = "label1" style="visibility: hidden;">Incorrect user ID</label>
+                  <input type="password" placeholder="Enter Password" name="ipassword" style="width: 90%;padding: 12px 20px;margin: 8px 26px;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;font-size: 16px;">      
+                  <label id = "label2" style="visibility: hidden;">Incorrect Password</label>
+                  <button type="submit" style="background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 26px;border: none;cursor: pointer;width: 90%;font-size:20px;">Login</button>
+                  <a href="/signup" style="text-decoration:none; float:left; margin-left:34px; margin-top:26px;">New User</a>   
+                  <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
+              </div>
+          </form>
+      </div>      
+  </div>
+
+  <!--------------------------------------------------------------------------------------------------------------->
+    
+  
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap');
+  .nav-link{
+      font-size: medium;
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: block;
+      border-bottom: 5px solid transparent;
+      font-family: 'Roboto', sans-serif;
+  }
+  .carousel-content{
+      position: absolute;
+      bottom: 1px;
+      z-index: 20;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,.6);
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .icon-calentar{
+      content: "\e264";
+      font-size: 42px;
+      color: #f2921e;
+      padding-bottom: 20px;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+  .myend1{
+      margin-top: 50px;
+      color: white;
+      font-size: small;
+      letter-spacing: 1px;
+      font-family: 'Lato', sans-serif;
+  }
+
+
+  .address span , .menu span{
+      margin-top: 20px;
+      color: #FFF; 
+      font-weight: bold; 
+      border-bottom: 2px solid #c7c7c7; 
+      padding:10px 0px;
+      display: block;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 3px;
+  }
+  
+  .address li a , .menu li a{
+      color:#FFF;
+      letter-spacing: 3px;
+      text-decoration:none;
+      font-size:20px;
+  }
+
+  .address li, .menu li{
+      margin:20px 0px;
+      list-style: none;
+  }
+
+  .address .fa{
+      color: #da3e44;
+      font-size:18px;
+  }
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+.avatar {
+  width: 200px;
+height:200px;
+  border-radius: 50%;
+}
+/* The Modal (background) */
+.modal {
+display:none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+/* Modal Content Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 4% auto 15% auto;
+  border: 1px solid #888;
+  width: 40%; 
+padding-bottom: 30px;
+}
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+  animation: zoom 0.6s
+}
+@keyframes zoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+.mystle{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+
+</style>
+
+<script>
+  function openCity(cityName) {
+      var i;
+      var x = document.getElementsByClassName("city");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      document.getElementById(cityName).style.display = "block";  
+  }
+</script>

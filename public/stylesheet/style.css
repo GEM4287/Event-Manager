@@ -1,0 +1,196 @@
+.top-left {
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    color: white;
+    font-size: 50px;
+}
+.navbar{
+    position: relative;
+    min-height: 70px;
+}
+.logo{
+  margin-left: 10px;
+  display: block;
+  background-color:  #212121;
+  color:  #ffcc66;
+	font-size: 27px;
+  font-weight:500;
+	text-decoration:none;
+	text-transform:uppercase;
+	letter-spacing:5px;
+	text-align: center;
+	padding: 10px 15px;
+}
+
+.nav-item{
+    display: block; 
+    font-weight: bold;
+    text-transform: uppercase; 
+    margin-right: 2rem;
+}
+  
+.nav-link:hover {
+    border-bottom: 5px solid red;
+}
+
+.mycol1 {
+    position: absolute;
+    top: 200px;
+    left: 70px;
+    color: white;
+    font-size: 90px;
+}
+
+/*-----------------------------------------------------------------------------------------------------
+Header CTA ======== Only for home page*/
+
+
+.start-text {
+  font-weight: bold;
+  background: rgba(197, 239, 247, 0.7);
+  color: black;
+  padding: 3px 15px;
+  /* transform: skew(40deg); */
+}
+
+.entry-content{
+  font-family: 'Oswald', sans-serif;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  -webkit-transform: skew(-15deg);
+  -moz-transform: skew(-15deg);
+  -o-transform: skew(-15deg);
+  transform: skew(-15deg);
+}
+
+.entry-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 46px;
+  line-height: 52px;
+  text-transform: uppercase;
+  background: rgba(197, 239, 247, 0.74);
+  padding: 20px;
+  margin-bottom: 3px;
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  border-bottom: 5px solid white;
+  border-top: 5px solid white;
+}
+
+.entry-title a{
+  color: black;
+  transform: skew(-15deg);
+}
+
+.entry-content > p {
+  border-bottom: 4px solid #fff;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+h5 span {
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  margin-bottom: 5px;
+  padding: 0 6px;
+  display: block;
+  background: rgba(171, 171, 171, 0.73);
+  padding: 5px 10px;
+  color: #FFFFFF;
+  margin-bottom: 0;
+}
+
+.header-cta {
+  width: 100%;
+  padding: 0 15px;
+  z-index: 50;
+  bottom: 250px;
+  top: 220px;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+.sidebar-container {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  background-color: wheat;
+  color: #fff;
+}
+.sidebar-logo{
+  padding: 20px 20px 20px 30px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+}
+.sidebar-logo:hover{
+  background-color: rgb(88, 88, 197);
+  color: white;
+}
+
+.sidebar-links {
+  color: white;
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
+
+.overlay {
+  width: 4%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay button {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay button:hover, .overlay button:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+.mybutton1{
+  display: block;
+  width: 400px;
+  margin: 20px;
+}

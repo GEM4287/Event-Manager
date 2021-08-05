@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- Internal CSS -->
+    <link href="../stylesheet/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font Awesomw -->
+    <script src="https://kit.fontawesome.com/ff6ae855f8.js" crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <!--== Google Fonts ==-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <title>Home page</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: wheat;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" ><span class="logo">EVENT MANAGER</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">about</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="document.getElementById('modal-wrapper').style.display='block'">login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contactus">contact us</a>
+            </li>
+        </ul> 
+      </div>  
+    </nav>
+    
+<!------------------------------------------------------------------------------------------------------------>
+
+
+<section>
+
+    <div class="container">
+        <div class="card" style="margin: 40px;">
+            <div class="card-header" style="background-color: wheat; margin: 0px;padding: 0px;">
+              <p style="font-weight: bolder;font-size:larger;margin-top: 12px;margin-left: 20px;">Book Your event</p>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="/booktickets" id="formfield">
+                    <input type="text" name="idevent" value="<%=idevent%>" hidden>
+                    <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                        <div class="col-md-9 mb-3">
+                            <label style="font-weight: 700;">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" id="iname" name="iname" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label style="font-weight: 700;"></label>
+                            <input type="text" class="form-control" value="<%= price[0].eventdate%>" id="idate" name="idate" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                        <div class="col-md-4 mb-3">
+                            <label style="font-weight: 700;">Mobile No.</label>
+                            <input type="text" class="form-control" placeholder="Enter your Mob No" id="imobno" name="imobno" required>
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label style="font-weight: 700;">E-Mail</label>
+                            <input type="text" class="form-control" placeholder="Enter your mail id" id="iemail" name="iemail" required>
+                        </div>
+                    </div>
+                    <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                        <div class="col-md-12 mb-3">
+                            <label style="font-weight: 700;">Address</label>
+                            <input type="text" class="form-control" placeholder="Enter your Address" id="iaddress" name="iaddress" required>
+                        </div>
+                    </div>
+                    <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                        <div class="col-md-6 mb-3">
+                            <label style="font-weight: 700;">No of Passes</label>
+                            <input type="text" class="form-control" placeholder="Enter how many passes you need" id="inumber" name="inumber" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label style="font-weight: 700;">Price Per Pass</label>
+                            <input type="text" class="form-control" id="ivalue" name="ivalue" value="<%=price[0].eventprice%>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                        <div class="mb-3">
+                            <button type="button" name="btn" value="Submit" data-toggle="modal" data-target="#confirm-submit" id="myBtn">Click here to show your details.</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+    
+<!------------------------------------------------------------------------------------------------------------>
+
+<!-- The Modal -->
+
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header" style="justify-content: center;">
+            <p style="font-weight: bolder;font-size: x-large;"> Confirm your booking. </p>    
+        </div>
+        <div class="modal-body">
+            <input type="text" name="idevent" value="<%=idevent%>" hidden>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">Your Name</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="personname"></label>
+                </div>
+            </div>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">Mobile No.</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="mobileno"></label>
+                </div>
+            </div>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">E-Mail</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="email"></label>
+                </div>
+            </div>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">Address</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="address"></label>
+                </div>
+            </div>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">No of Passes</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="passes"></label>
+                </div>
+            </div>
+            <div class="form-row row" style="padding-left: 20px; padding-right: 20px;">
+                <div class="col-md-2 mb-3">
+                    <label style="font-weight: 700;">Total Price</label>
+                </div>
+                <div class="col-md-10 mb-3">
+                    <label id="totalvalue"></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="submit" class="btn btn-success success">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+<!------------------------------------------------------------------------------------------------------------->
+
+
+<%- include ('../footer') %>
+
+<style>
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,500,700);
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
+
+
+<script>
+
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal 
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+    $('#myBtn').click(function() {
+        var one = parseInt($("#inumber").val());
+        var two = parseInt($("#ivalue").val());
+        $("#totalvalue").text(one * two);
+        $('#personname').text($('#iname').val());
+        $('#mobileno').text($('#imobno').val());
+        $('#email').text($('#iemail').val());
+        $('#address').text($('#iaddress').val());
+        $('#passes').text($('#inumber').val());
+    });
+
+    $('#submit').click(function(){
+        alert('submitting');
+        $('#formfield').submit();
+    });
+
+</script>
+    

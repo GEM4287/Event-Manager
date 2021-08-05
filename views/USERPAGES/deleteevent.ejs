@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <title>Your Profile</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#"><span class="logo">Event Managment</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="nav justify-content-end">      
+                <li class="nav-item active">
+                  <a class="nav-linkr" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-linkr" href="#">about</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-linkr" href="/contactus">contact us</a>
+                </li>
+            </ul> 
+        </div>
+    </nav>
+    
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <form method="GET" action="/create">
+          <button class="btn btn-outline-primary" type="submit">Create Events</button>
+        </form>
+        <form method="GET" action="/viewevent">
+          <button class="btn btn-outline-primary" type="submit">View Events</button>
+        </form>
+        <form method="GET" action="/update">
+          <button class="btn btn-outline-primary" type="submit">Update Events</button> 
+        </form>
+      </div>
+    </div>
+
+    <div style="font-size:30px; cursor:pointer;" onclick="openNav()">
+      <p style="text-align: center; margin-top: 7px;">&#9776;open</p>
+    </div>
+
+
+    <div class="container col-sm-12" id="myid">
+      <% if (message.length > 0) { %>
+          <div class="alert alert-success col-sm-12"><%= message %></div>
+      <% } %>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card" style="margin: 20px;">
+          <h5 class="card-header" style="background-color:darkgoldenrod; font-weight: bold;">Delete Event</h5>
+          <div class="card-body">
+            <div class="panel-body">
+              <form method="POST" action="/delete/deleteevent">
+                <div class="form-group">
+                    <label for="last_name" class="mylabel">Enter the EventId you wanna delete:</label>
+                    <input type="text" class="form-control" name="eventid" placeholder="Enter Eventid">
+                </div>
+                <div class="form-group">
+                    <!-- Button -->                                       
+                    <div class="col-md-offset-3 col-md-3">
+                        <button id="btn-signup" type="submit" class="btn btn-info" ><i class="icon-hand-right"></i> &nbsp Click to Delete events</button>   
+                    </div>
+                </div>
+              </form>
+              <div class="form-group">
+                <label for="last_name" class="mylabel">If you dont know the EventId Click on below link:</label>
+                <a href="./viewevent" style="font-size: larger;font-weight:bold;text-decoration: underline;">Get EventID</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+</script>
+  
+<style>
+  .mylabel{
+    margin: 20px;
+    font-weight: bold ;
+    font-family:'Times New Roman', Times, serif;
+    font-size: larger;
+    letter-spacing: 1px;
+  }
+</style>
